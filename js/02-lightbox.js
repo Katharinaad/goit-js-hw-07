@@ -18,17 +18,11 @@ function createGalleryMarkup(items) {
     .join("");
 }
 
-ulGallery.innerHTML = markup;
+ulGallery.insertAdjacentHTML("beforeend", markup);
 
-ulGallery.addEventListener("click", imageClick);
-
-function imageClick(event) {
-  event.preventDefault();
-
-  let galleryLightbox = new SimpleLightbox(".gallery a", {
-    captions: true,
-    captionsData: "alt",
-    captionPosition: "bottom",
-    captionDelay: 200,
-  });
-}
+let galleryLightbox = new SimpleLightbox(".gallery a", {
+  captions: true,
+  captionsData: "alt",
+  captionPosition: "bottom",
+  captionDelay: 200,
+});
